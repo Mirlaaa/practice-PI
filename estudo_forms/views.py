@@ -10,7 +10,10 @@ def form_aluno(request):
         if form.is_valid:
             aluno = form.save(commit = False)
             aluno.save()
-            messages.success(request, 'Cadastro realizado com sucesso!')
+            messages.success(request, 'Cadastro realizado com sucesso!')        
+            return redirect('form-aluno')
+        else:
+            messages.error(request, 'Erro ao realizar cadastro.')
             return redirect('form-aluno')
     else:
         form = AlunoForm()
