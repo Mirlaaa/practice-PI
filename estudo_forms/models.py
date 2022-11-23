@@ -4,8 +4,8 @@ from django.db import models
 
 # Create your models here.
 SEXO_CHOICES = [
-    ('M','MASCULINO'),
-    ('F', 'FEMININO')
+    ('M','Masculino'),
+    ('F', 'Feminino')
 ]
 
 CURSO_CHOICES = [
