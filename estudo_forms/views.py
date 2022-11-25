@@ -19,3 +19,6 @@ def form_aluno(request):
         form = AlunoForm()
 
     return render(request, 'form.html',{'form':form})
+
+def redirect_form_aluno(request):
+    return redirect('form-aluno')
