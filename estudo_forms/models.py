@@ -20,16 +20,6 @@ class Minicurso(models.Model):
         return self.nome
 
 
-class Curso(models.Model):
-    nome = models.CharField(max_length=150)
-    grau = models.CharField(
-        max_length=100,
-        choices = CURSO_CHOICES
-    )
-
-    def __str__(self):
-        return self.grau
-
 class Aluno(models.Model):
     nome = models.CharField(max_length=100)
     cpf = models.CharField(max_length=100)
@@ -38,10 +28,13 @@ class Aluno(models.Model):
     sexo = models.CharField(
         max_length=100,
         choices= SEXO_CHOICES,
-        default='FEMININO'
+        default='Feminino'
     )   
 
-    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    curso = models.CharField(
+        max_length=100,
+        choices=CURSO_CHOICES
+    )
     minicursos = models.ManyToManyField(Minicurso)
     
     def __str__(self):
