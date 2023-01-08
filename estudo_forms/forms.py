@@ -1,5 +1,5 @@
 from django import forms
-from estudo_forms.models import SEXO_CHOICES, Aluno
+from estudo_forms.models import SEXO_CHOICES, Aluno, Minicurso
 
 
 class AlunoForm(forms.ModelForm):

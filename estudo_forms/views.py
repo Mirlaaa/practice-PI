@@ -8,8 +8,12 @@ def form_aluno(request):
 
     if request.method == 'POST':
         if form.is_valid:
-            aluno = form.save(commit = False)
-            aluno.save()
+            aluno = form.save(commit = True)
+            # aluno.save()
+            print(aluno)
+            # aluno.minicursos.add(form.cleaned_data.get('minicursos'))
+
+            print(form.cleaned_data.get('minicursos'))
             messages.success(request, 'Cadastro realizado com sucesso!')        
             return redirect('form-aluno')
         else:
