@@ -10,7 +10,7 @@ class AlunoForm(forms.ModelForm):
 
         widgets = {
             'nome':forms.TextInput(attrs={'placeholder':'Fulano da Silva Cicrano'}),
-            'email':forms.TextInput(attrs={'placeholder':'fulano@tarara.com'}),
+            'email':forms.TextInput(attrs={'placeholder':'fulano@tarara.com','required':True,'type':'email'}),
             'data_nascimento':forms.TimeInput(attrs={"type": "date"}),
             'minicursos': forms.CheckboxSelectMultiple(),
             'sexo':forms.RadioSelect(),
